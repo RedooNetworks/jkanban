@@ -216,6 +216,10 @@ var dragula = require("dragula");
 
       //for on all the boards
       for (var boardkey in boards) {
+        if(boards.hasOwnProperty(boardkey) === false) {
+          continue;
+        }
+
         // single board
         var board = boards[boardkey];
         if (!isInit) {
@@ -284,6 +288,10 @@ var dragula = require("dragula");
         //add drag to array for dragula
         self.boardContainer.push(contentBoard);
         for (var itemkey in board.item) {
+          if(board.item.hasOwnProperty(itemkey) === false) {
+            continue;
+          }
+
           //create item
           var itemKanban = board.item[itemkey];
           var nodeItem = document.createElement("div");
